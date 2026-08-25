@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> User Interface </title>
+    <style>
+        table,th,td {
+            border: 1px solid black;
+        }
+
+       body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       }
+    </style>
+</head>
+<body>
+<h1> All Users Data </h1>
+<table>
+    <tr>
+      <th>User Id </th>
+      <th> User name </th>
+      <th> Email</th>
+    </tr>
+   
+<% for(user of data){ %>
+   <tr>
+    <td><%= user.Id %> </td>
+    <td><%= user.username %> </td>
+    <td> <%= user.email %> </td>
+    <td>
+        <form method="GET" action="/users/<%= user.Id %>/edit">
+            <button> Edit Username </button>
+        </form>
+    </td>
+   </tr>
+<% } %>
+
+</table>
+</body>
+</html>
